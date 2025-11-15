@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Future job predictor</title>
+    <style>
+      body {
+        font-family: arial, sans-serif;
+        color: white;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        display: flex;
+      }
+      .container {
+        background: rgba(0, 0, 0, 7);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        width: 300px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 3);
+      }
+      h1 {
+        color: #333;
+      }
+      input {
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+        border: none;
+        width: 90%;
+        margin: 10px 0;
+      }
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: #ff3b2f;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-style: italic;
+      }
+      div {
+        display: block;
+        height: auto;
+        width: 300px;
+        border: 2px solid;
+        border-color: #0066cc;
+        border-radius: 20px;
+        padding: 24px;
+        margin: 24px;
+        background-color: #05313d;
+        color: antiquewhite;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Future job predictor</h2>
+      <!--tag / element -->
+      <input id="nameInput" type="text" placeholder="Enter your name" />
+      <br />
+      <button onclick="predictfutureJob()">Predict my future job</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      function predictfutureJob() {
+        let username = document.getElementById("nameInput").value;
+
+        if (username == "") {
+          alert("Please enter your name!");
+          return;
+        }
+
+        const futureJobs = [
+          "Professional nap tester..🛌",
+          "Chief snack officer..🍕🍩",
+          "Emoji translator..😂✌️",
+          "Netflix binge watcher..📺",
+          "Time travel tourist..✈️",
+          "Master of dad jokes..🤣",
+          "Alien language translate..👽",
+          "Dinosaur pet trainer..🦕🦖",
+        ];
+
+        const randomIndex = Math.floor(Math.random() * futureJobs.length);
+        const future = futureJobs[randomIndex];
+
+        document.getElementById("result").innerText =
+          username + ", " + "your future job is: " + future;
+      }
+    </script>
+  </body>
+</html>
